@@ -68,3 +68,28 @@ function changeCardsText() {
   }
 }
 changeCardsText();
+
+// Modification n°7.
+function changeViewButtons() {
+  let buttons = document.querySelectorAll(".btn-group");
+  let length = (buttons.length);
+  for (i = 0; i < length; i++) {
+    let targetButton = buttons[i].children[0];
+    targetButton.classList.remove("btn-outline-secondary");
+    targetButton.classList.add("btn-success");
+  }
+}
+changeViewButtons();
+
+// Modification 8. 
+function frontPyramid() {
+  let cardsContainer = document.querySelector("div.album div.container");
+  let newDivRow = document.createElement("div");
+  newDivRow.classList.add("row");
+  cardsContainer.appendChild(newDivRow);
+
+  let rows = document.querySelectorAll("div.album div.container div.row");
+  let targetCard = rows[0].children[2];
+  rows[1].appendChild(targetCard);
+}
+frontPyramid();
